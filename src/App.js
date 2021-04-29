@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef}  from "react";
+import ImageUploader from "./common/ImageUploader";
 
 function App() {
+  const imageRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <ImageUploader ref={imageRef} accept={['image/jpeg', 'image/jpg', 'image/png']} defaultImage='logo192.png' />
     </div>
   );
 }
